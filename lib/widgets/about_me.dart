@@ -1,4 +1,4 @@
-import 'package:ahsun_habib/utilities/app_texts.dart';
+import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:flutter/material.dart';
 
 class AboutMe extends StatelessWidget {
@@ -13,21 +13,21 @@ class AboutMe extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            heroSectionHeading,
+            AppTexts.heroSectionHeading,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(
             height: 20,
           ),
           Text(
-            heroSectionSubHeading,
+            AppTexts.heroSectionSubHeading,
             style: Theme.of(context).textTheme.titleSmall,
           ),
           const SizedBox(
             height: 25,
           ),
           Text(
-            aboutMeDescription,
+            AppTexts.aboutMeDescription,
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(

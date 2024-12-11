@@ -1,5 +1,5 @@
-import 'package:ahsun_habib/widgets/navigation/navbar_item.dart';
-import 'package:ahsun_habib/widgets/navigation/navbar_logo.dart';
+import 'package:ahsun_habib/widgets/navbar_item.dart';
+import 'package:ahsun_habib/widgets/navbar_logo.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatelessWidget {

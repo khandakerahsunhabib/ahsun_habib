@@ -1,4 +1,5 @@
-import 'package:ahsun_habib/utilities/app_texts.dart';
+import 'package:ahsun_habib/core/utils/app_texts.dart';
+import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
 class SkillsExpertise extends StatelessWidget {
@@ -10,14 +11,14 @@ class SkillsExpertise extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          skillSectionHeading,
+          AppTexts.skillSectionHeading,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(
           height: 20,
         ),
         Text(
-          skillSectionDescription,
+          AppTexts.skillSectionDescription,
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(
@@ -28,21 +29,21 @@ class SkillsExpertise extends StatelessWidget {
           children: [
             getCustomBox(
               context,
-              dartIcon,
-              dartTitle,
-              description1,
+              AssetsPath.dartIcon,
+              AppTexts.dartTitle,
+              AppTexts.description1,
             ),
             getCustomBox(
               context,
-              flutterIcon,
-              flutterTitle,
-              description2,
+              AssetsPath.flutterIcon,
+              AppTexts.flutterTitle,
+              AppTexts.description2,
             ),
             getCustomBox(
               context,
-              stateManagementIcon,
-              stateManageTitle,
-              description3,
+              AssetsPath.stateManagementIcon,
+              AppTexts.stateManageTitle,
+              AppTexts.description3,
               Colors.lightBlue,
             ),
           ],
@@ -55,22 +56,22 @@ class SkillsExpertise extends StatelessWidget {
           children: [
             getCustomBox(
               context,
-              uiOrUxIcon,
-              uiOrUxTitle,
-              description4,
+              AssetsPath.uiOrUxIcon,
+              AppTexts.uiOrUxTitle,
+              AppTexts.description4,
               Colors.lightBlue,
             ),
             getCustomBox(
               context,
-              backendIcon,
-              backendTitle,
-              description5,
+              AssetsPath.backendIcon,
+              AppTexts.backendTitle,
+              AppTexts.description5,
             ),
             getCustomBox(
               context,
-              versionIcon,
-              versionTitle,
-              description6,
+              AssetsPath.versionIcon,
+              AppTexts.versionTitle,
+              AppTexts.description6,
             ),
           ],
         ),
