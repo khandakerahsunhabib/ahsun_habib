@@ -1,3 +1,4 @@
+import 'package:ahsun_habib/utilities/app_texts.dart';
 import 'package:flutter/material.dart';
 
 class SkillsExpertise extends StatelessWidget {
@@ -9,14 +10,14 @@ class SkillsExpertise extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Skills & Expertise',
+          skillSectionHeading,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(
           height: 20,
         ),
         Text(
-          "With a strong foundation in Dart and Flutter, I specialize in crafting high-performance mobile apps. My expertise spans state management, UI/UX design, backend integration, and version control with Git. I’m dedicated to delivering seamless, cross-platform experiences that blend functionality with elegant design.",
+          skillSectionDescription,
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(
@@ -26,20 +27,22 @@ class SkillsExpertise extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             getCustomBox(
-                context,
-                "assets/images/icons/dart.png",
-                "Dart programming",
-                "I use Dart to build fast and scalable Flutter apps, delivering smooth user experiences."),
-            getCustomBox(
-                context,
-                'assets/images/icons/flutter.png',
-                "Flutter SDK",
-                "I leverage Flutter SDK to create beautiful, cross-platform apps with seamless performance."),
+              context,
+              dartIcon,
+              dartTitle,
+              description1,
+            ),
             getCustomBox(
               context,
-              'assets/images/icons/getx.png',
-              "State Management",
-              "I manage app state efficiently using tools like GetX, Provider and Riverpod.",
+              flutterIcon,
+              flutterTitle,
+              description2,
+            ),
+            getCustomBox(
+              context,
+              stateManagementIcon,
+              stateManageTitle,
+              description3,
               Colors.lightBlue,
             ),
           ],
@@ -52,21 +55,23 @@ class SkillsExpertise extends StatelessWidget {
           children: [
             getCustomBox(
               context,
-              'assets/images/icons/ux-interface.png',
-              "UI/UX Design",
-              "I craft intuitive, responsive interfaces with custom widgets and smooth animations.",
+              uiOrUxIcon,
+              uiOrUxTitle,
+              description4,
               Colors.lightBlue,
             ),
             getCustomBox(
-                context,
-                'assets/images/icons/api.png',
-                "Backend Integration",
-                "I integrate APIs and Firebase to power dynamic, data-driven Flutter apps."),
+              context,
+              backendIcon,
+              backendTitle,
+              description5,
+            ),
             getCustomBox(
-                context,
-                'assets/images/icons/version.png',
-                "Version Control",
-                "I use Git for seamless code collaboration, versioning, and project management."),
+              context,
+              versionIcon,
+              versionTitle,
+              description6,
+            ),
           ],
         ),
       ],
@@ -84,14 +89,9 @@ Widget getCustomBox(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(15),
       color: Colors.white,
-      boxShadow: [
-        BoxShadow(
-          color: Colors.teal.shade100,
-          offset: const Offset(1, 1),
-          blurRadius: 1,
-          spreadRadius: 2.0,
-        )
-      ],
+      border: Border.all(
+        color: Colors.teal.shade100,
+      ),
     ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
