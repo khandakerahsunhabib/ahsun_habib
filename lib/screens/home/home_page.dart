@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:ahsun_habib/widgets/centered_view.dart';
 import 'package:ahsun_habib/widgets/skills_expertise.dart';
 import 'package:ahsun_habib/widgets/custom_navigation_bar.dart';
 import 'package:ahsun_habib/widgets/about_image.dart';
 import 'package:ahsun_habib/widgets/about_me.dart';
 import 'package:ahsun_habib/widgets/section_padding.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
