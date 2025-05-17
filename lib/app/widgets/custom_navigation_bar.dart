@@ -1,6 +1,5 @@
-import 'package:ahsun_habib/screens/home/widgets/animated_button.dart';
-import 'package:ahsun_habib/widgets/navbar_item.dart';
-import 'package:ahsun_habib/widgets/navbar_logo.dart';
+import 'package:ahsun_habib/app/widgets/animated_button.dart';
+import 'package:ahsun_habib/app/widgets/navbar_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatelessWidget {
@@ -11,27 +10,23 @@ class CustomNavigationBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const NavbarLogo(),
+        SizedBox(
+          width: 300,
+          height: 100,
+          child: Image.asset('assets/images/ahsun-habib.png'),
+        ),
         const Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             NavbarItem(title: 'Home'),
-            SizedBox(
-              width: 30,
-            ),
+            SizedBox(width: 25),
             NavbarItem(title: 'Skills'),
-            SizedBox(
-              width: 30,
-            ),
+            SizedBox(width: 25),
             NavbarItem(title: 'Projects'),
-            SizedBox(
-              width: 30,
-            ),
+            SizedBox(width: 25),
             NavbarItem(title: 'Blog'),
-            SizedBox(
-              width: 30,
-            ),
-            NavbarItem(title: 'About'),
+            SizedBox(width: 25),
+            NavbarItem(title: 'About Me'),
           ],
         ),
         AnimatedButton(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CenteredView extends StatelessWidget {
   final Widget child;
 
-  const CenteredView(this.child);
+  const CenteredView(this.child, {super.key});
 
   @override
   Widget build(BuildContext context) {

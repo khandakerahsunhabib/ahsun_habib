@@ -6,11 +6,11 @@ class SectionPadding extends StatelessWidget {
   final double bottomPadding;
 
   const SectionPadding({
-    Key? key,
+    super.key,
     required this.child,
     this.topPadding = 100.0,
     this.bottomPadding = 100.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
