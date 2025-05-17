@@ -1,3 +1,4 @@
+import 'package:ahsun_habib/screens/home/widgets/animated_button.dart';
 import 'package:ahsun_habib/widgets/navbar_item.dart';
 import 'package:ahsun_habib/widgets/navbar_logo.dart';
 import 'package:flutter/material.dart';
@@ -33,26 +34,10 @@ class CustomNavigationBar extends StatelessWidget {
             NavbarItem(title: 'About'),
           ],
         ),
-        SizedBox(
-          height: 40,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(3),
-              ),
-            ),
-            onPressed: () {
-              print('You clicked on the button');
-            },
-            child: Text(
-              'Contact Me',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 18,
-                  ),
-            ),
-          ),
-        )
+        AnimatedButton(
+          buttonLabel: 'Contact Me',
+          hoverColor: Colors.teal,
+        ),
       ],
     );
   }

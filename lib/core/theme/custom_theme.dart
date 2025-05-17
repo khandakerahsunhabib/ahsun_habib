@@ -6,12 +6,12 @@ class CustomTheme {
       fontFamily: 'Asap',
       textTheme: const TextTheme(
         titleLarge: TextStyle(
-          fontSize: 70,
+          fontSize: 60,
           fontWeight: FontWeight.w800,
-          height: 0.9,
+          height: 1.1,
         ),
         titleMedium: TextStyle(
-          fontSize: 60,
+          fontSize: 55,
           fontWeight: FontWeight.w800,
           height: 0.9,
         ),
@@ -34,9 +34,9 @@ class CustomTheme {
       fontFamily: 'Asap',
       textTheme: const TextTheme(
         titleLarge: TextStyle(
-          fontSize: 70,
+          fontSize: 60,
           fontWeight: FontWeight.w800,
-          height: 0.9,
+          height: 1.5,
         ),
         titleMedium: TextStyle(
           fontSize: 60,
