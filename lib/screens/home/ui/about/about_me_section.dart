@@ -1,4 +1,5 @@
 import 'package:ahsun_habib/app/widgets/animated_button.dart';
+import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:ahsun_habib/app/widgets/section_padding.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +9,15 @@ class AboutMeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionPadding(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildAboutMeContent(context),
-          _buildAboutMeImage(),
-        ],
+    return CenteredView(
+      SectionPadding(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _buildAboutMeContent(context),
+            _buildAboutMeImage(),
+          ],
+        ),
       ),
     );
   }

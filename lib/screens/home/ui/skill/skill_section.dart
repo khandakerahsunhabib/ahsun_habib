@@ -1,3 +1,4 @@
+import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:ahsun_habib/app/widgets/section_padding.dart';
@@ -9,13 +10,15 @@ class SkillSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionPadding(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildSkillSectionHeadingAndDescription(context),
-          _buildSkillSectionBoxes(context),
-        ],
+    return CenteredView(
+      SectionPadding(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildSkillSectionHeadingAndDescription(context),
+            _buildSkillSectionBoxes(context),
+          ],
+        ),
       ),
     );
   }
