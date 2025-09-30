@@ -2,7 +2,7 @@ import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:ahsun_habib/app/widgets/section_padding.dart';
-import 'package:ahsun_habib/screens/home/ui/skill/widgets/custom_skill_box.dart';
+import 'package:ahsun_habib/screens/home/ui/widgets/custom_skill_box.dart';
 import 'package:flutter/material.dart';
 
 class SkillSection extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:ahsun_habib/core/theme/custom_theme.dart';
 import 'package:ahsun_habib/core/utils/app_texts.dart';
-import 'package:ahsun_habib/screens/home/home_page.dart';
+import 'package:ahsun_habib/screens/home/ui/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 class KAHWebApp extends StatelessWidget {
