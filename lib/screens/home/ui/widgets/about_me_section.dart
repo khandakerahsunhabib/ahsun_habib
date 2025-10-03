@@ -2,6 +2,7 @@ import 'package:ahsun_habib/app/widgets/animated_button.dart';
 import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:ahsun_habib/app/widgets/section_padding.dart';
+import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
 class AboutMeSection extends StatelessWidget {
@@ -24,7 +25,7 @@ class AboutMeSection extends StatelessWidget {
 
   Widget _buildAboutMeContent(BuildContext context) {
     return SizedBox(
-      width: 600,
+      width: 800,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -75,14 +76,13 @@ class AboutMeSection extends StatelessWidget {
 
   Widget _buildAboutMeImage() {
     return Container(
-      width: 500,
-      height: 500,
+      width: 700,
+      height: 600,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
-          image: AssetImage(
-              'assets/images/profile-picture-of-khandaker-ahsun-habib.jpg'),
-          fit: BoxFit.fitWidth,
+          image: AssetImage(AssetsPath.ahsunHabibPassingTimeOnPhone),
+          fit: BoxFit.cover,
         ),
       ),
     );

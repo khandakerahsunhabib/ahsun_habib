@@ -1,6 +1,7 @@
 import 'package:ahsun_habib/app/widgets/animated_button.dart';
 import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/app/navigation/navbar_item.dart';
+import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
 class CustomWebNavBar extends StatelessWidget implements PreferredSizeWidget {
@@ -35,7 +36,7 @@ class CustomWebNavBar extends StatelessWidget implements PreferredSizeWidget {
                 SizedBox(
                   width: 300,
                   height: 100,
-                  child: Image.asset('assets/images/ahsun-habib.png'),
+                  child: Image.asset(AssetsPath.websiteLogo),
                 ),
                 const Row(
                   mainAxisSize: MainAxisSize.min,
