@@ -4,7 +4,7 @@ class AnimatedButton extends StatefulWidget {
   final String buttonLabel;
   final Color hoverColor;
   final Color? textColor;
-  final Color buttonBgColor;
+  final Color? buttonBgColor;
 
   const AnimatedButton({
     super.key,

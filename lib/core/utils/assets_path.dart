@@ -8,4 +8,10 @@ class AssetsPath {
   static const String websiteLogo = "assets/images/website-logo.png";
   static const String ahsunHabibPassingTimeOnPhone =
       "assets/images/ahsun-habib.jpg";
+  static const String locationIndexAppBanner =
+      "assets/images/location-index.jpg";
+  static const String taskManagerAppBanner =
+      "assets/images/task-manager-app.jpg";
+  static const String todoAppBanner = "assets/images/todo-app.jpg";
+  static const String mediGuideAppBanner = "assets/images/mediguide.jpg";
 }

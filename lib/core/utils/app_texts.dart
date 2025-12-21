@@ -34,4 +34,8 @@ class AppTexts {
       "I integrate APIs and Firebase to power dynamic, data-driven Flutter apps.";
   static const String description6 =
       "I use Git for seamless code collaboration, versioning, and project management.";
+
+//Recent project section
+  static const String descriptionOfTheRecentProjectSection =
+      "A showcase of my latest Flutter projects, highlighting modern UI design, smooth performance\nand practical features built for real-world use.";
 }

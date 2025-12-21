@@ -1,5 +1,6 @@
 import 'package:ahsun_habib/app/widgets/centered_view.dart';
 import 'package:ahsun_habib/app/widgets/section_padding.dart';
+import 'package:ahsun_habib/core/utils/app_texts.dart';
 import 'package:ahsun_habib/screens/home/ui/controller/home_page_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +21,12 @@ class RecentProjectSection extends StatelessWidget {
               'Recent Projects',
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            const SizedBox(height: 20),
             Text(
-                'data data datadatadatadatadatadatadata datadatadatadatadatadatadata datadatadata'),
+              AppTexts.descriptionOfTheRecentProjectSection,
+              style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 20),
             Column(
               children: [
@@ -40,15 +45,15 @@ class RecentProjectSection extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(16)),
-                              child: Image.network(
+                              child: Image.asset(
                                 project.image,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                                 width: double.infinity,
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(20.0),
                             child: Column(
                               children: [
                                 Text(
@@ -61,20 +66,37 @@ class RecentProjectSection extends StatelessWidget {
                                 Text(
                                   project.description,
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(fontSize: 14),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(fontSize: 18),
                                 ),
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(6)),
-                                    backgroundColor: Colors.teal,
-                                    foregroundColor: Colors.white,
+                                SizedBox(
+                                  width: double.infinity,
+                                  height: 40,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                      backgroundColor: Colors.teal,
+                                      foregroundColor: Colors.white,
+                                    ),
+                                    onPressed: () {},
+                                    child: Text(
+                                      'View Project On Github',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall!
+                                          .copyWith(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500),
+                                    ),
                                   ),
-                                  onPressed: () {},
-                                  child: Text('View Project On Github'),
                                 ),
                               ],
                             ),
@@ -84,15 +106,15 @@ class RecentProjectSection extends StatelessWidget {
                     );
                   },
                   options: CarouselOptions(
-                    height: 400,
+                    height: 450,
+                    aspectRatio: 16 / 9,
                     enlargeCenterPage: true,
                     autoPlay: true,
-                    aspectRatio: 16 / 9,
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enableInfiniteScroll: true,
                     autoPlayAnimationDuration:
                         const Duration(milliseconds: 800),
-                    viewportFraction: 0.6,
+                    viewportFraction: 0.4,
                   ),
                 )
               ],
