@@ -1,10 +1,8 @@
 class AppTexts {
   //First section title and description
   static const String appTitle = 'Ahsun Habib | Flutter Developer';
-  static const String heroSectionHeading =
-      "Flutter Developer & Mobile App Enthusiast";
-  static const String heroSectionSubHeading =
-      "Crafting seamless and engaging mobile experiences";
+  static const String heroSectionHeading = "Hi, I'm Ahsun Habib";
+  static const String heroSectionSubHeading = "I'm a Mobile App Developer";
   static const String aboutMeDescription =
       "With over two years of experience in Flutter mobile app development, I've completed several projects that showcase my skills and passion for programming. I’m continuously eager to explore new features and innovations in the field, and I’m excited to find an opportunity where I can apply my expertise.";
 

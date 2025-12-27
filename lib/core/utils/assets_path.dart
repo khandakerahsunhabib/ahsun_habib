@@ -14,4 +14,10 @@ class AssetsPath {
       "assets/images/task-manager-app.jpg";
   static const String todoAppBanner = "assets/images/todo-app.jpg";
   static const String mediGuideAppBanner = "assets/images/mediguide.jpg";
+
+  ///Social Icons
+  static const String facebook = "assets/images/icons/facebook.png";
+  static const String youtube = "assets/images/icons/youtube.png";
+  static const String linkedin = "assets/images/icons/linkedin.png";
+  static const String github = "assets/images/icons/github.png";
 }

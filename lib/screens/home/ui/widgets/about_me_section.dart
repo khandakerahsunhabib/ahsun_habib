@@ -53,12 +53,25 @@ class AboutMeSection extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 160,
-                child: AnimatedButton(
-                  buttonLabel: 'View My Works',
-                  hoverColor: Colors.teal,
-                ),
-              ),
+                  width: 166,
+                  height: 44,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.teal,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "WhatsApp Me",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                      ))),
               const SizedBox(width: 15),
               SizedBox(
                 width: 150,
@@ -68,8 +81,27 @@ class AboutMeSection extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          Row(
+            children: [
+              _buildSocialMediaIcon(onTap: () {}, imgPath: AssetsPath.linkedin),
+              _buildSocialMediaIcon(onTap: () {}, imgPath: AssetsPath.github),
+              _buildSocialMediaIcon(onTap: () {}, imgPath: AssetsPath.facebook),
+              _buildSocialMediaIcon(onTap: () {}, imgPath: AssetsPath.youtube),
+            ],
           )
         ],
+      ),
+    );
+  }
+
+  Widget _buildSocialMediaIcon(
+      {required VoidCallback onTap, required String imgPath}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 30, top: 30),
+        child: Image.asset(imgPath, width: 35),
       ),
     );
   }
