@@ -10,39 +10,59 @@ class SkillSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+    final isMobile = width < 640;
+    final isTablet = width >= 640 && width < 1008;
+
     return CenteredView(
       SectionPadding(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildSkillSectionHeadingAndDescription(context),
-            _buildSkillSectionBoxes(context),
-          ],
+        topPadding: isMobile ? 40.0 : 100.0,
+        bottomPadding: isMobile ? 40.0 : 100.0,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+            children: [
+              _buildSkillSectionHeadingAndDescription(context, isMobile, isTablet),
+              _buildSkillSectionBoxes(context, isMobile || isTablet),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildSkillSectionHeadingAndDescription(BuildContext context) {
+  Widget _buildSkillSectionHeadingAndDescription(
+      BuildContext context, bool isMobile, bool isTablet) {
+    final titleMediumStyle = Theme.of(context).textTheme.titleMedium!.copyWith(
+          fontSize: isMobile ? 28 : (isTablet ? 38 : 55),
+        );
+    final bodySmallStyle = Theme.of(context).textTheme.bodySmall!.copyWith(
+          fontSize: isMobile ? 15 : (isTablet ? 18 : 20),
+        );
+
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         Text(
           AppTexts.skillSectionHeading,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: titleMediumStyle,
+          textAlign: isMobile ? TextAlign.center : TextAlign.start,
         ),
         const SizedBox(height: 20),
         Text(
           AppTexts.skillSectionDescription,
-          style: Theme.of(context).textTheme.bodySmall,
+          style: bodySmallStyle,
+          textAlign: isMobile ? TextAlign.center : TextAlign.start,
         ),
         const SizedBox(height: 30),
       ],
     );
   }
 
-  Widget _buildSkillSectionBoxes(BuildContext context) {
+  Widget _buildSkillSectionBoxes(BuildContext context, bool isMobileOrTablet) {
     return Wrap(
+      alignment: isMobileOrTablet ? WrapAlignment.center : WrapAlignment.start,
       spacing: 25,
       runSpacing: 25,
       children: [

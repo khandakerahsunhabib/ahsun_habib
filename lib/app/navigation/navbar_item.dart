@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class NavbarItem extends StatefulWidget {
   final String title;
+  final VoidCallback onTap;
 
-  const NavbarItem({super.key, required this.title});
+  const NavbarItem({super.key, required this.title, required this.onTap});
 
   @override
   State<NavbarItem> createState() => _NavbarItemState();
@@ -23,7 +24,7 @@ class _NavbarItemState extends State<NavbarItem> {
       }),
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () {},
+        onTap: widget.onTap,
         child: AnimatedDefaultTextStyle(
           curve: Curves.easeOut,
           style: TextStyle(

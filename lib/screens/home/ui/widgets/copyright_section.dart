@@ -5,17 +5,15 @@ class CopyrightSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: Text(
-            "Copyright @ 2025 - Built with Flutter by Khandaker Ahsun Habib",
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+      child: Center(
+        child: Text(
+          "Copyright @ 2025 - Built with Flutter by Khandaker Ahsun Habib",
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
     );
   }
 }

@@ -5,18 +5,26 @@ import 'package:ahsun_habib/core/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
 class CustomWebNavBar extends StatelessWidget implements PreferredSizeWidget {
+  final Function(String) onNavItemTap;
+
   const CustomWebNavBar({
     super.key,
+    required this.onNavItemTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+    final isDesktop = width >= 1008;
+
     return AppBar(
       shadowColor: Colors.grey,
       elevation: 8.0,
       titleSpacing: 0.0,
-      toolbarHeight: 98.0,
+      automaticallyImplyLeading: false, // We handle drawer opening manually
+      toolbarHeight: isDesktop ? 98.0 : 70.0,
       title: Container(
+        height: isDesktop ? 98.0 : 70.0,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -30,34 +38,76 @@ class CustomWebNavBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CenteredView(Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Image.asset(AssetsPath.websiteLogo),
+            Expanded(
+              child: CenteredView(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: isDesktop
+                        ? [
+                            SizedBox(
+                              width: 250,
+                              height: 80,
+                              child: Image.asset(AssetsPath.websiteLogo, fit: BoxFit.contain),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                NavbarItem(
+                                  title: 'Home',
+                                  onTap: () => onNavItemTap('Home'),
+                                ),
+                                const SizedBox(width: 25),
+                                NavbarItem(
+                                  title: 'Skills',
+                                  onTap: () => onNavItemTap('Skills'),
+                                ),
+                                const SizedBox(width: 25),
+                                NavbarItem(
+                                  title: 'Projects',
+                                  onTap: () => onNavItemTap('Projects'),
+                                ),
+                                const SizedBox(width: 25),
+                                NavbarItem(
+                                  title: 'Blog',
+                                  onTap: () => onNavItemTap('Blog'),
+                                ),
+                                const SizedBox(width: 25),
+                                NavbarItem(
+                                  title: 'About Me',
+                                  onTap: () => onNavItemTap('About Me'),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 44,
+                              child: AnimatedButton(
+                                buttonLabel: 'Contact Me',
+                                hoverColor: Colors.teal,
+                                onTap: () => onNavItemTap('Contact Me'),
+                              ),
+                            ),
+                          ]
+                        : [
+                            SizedBox(
+                              width: 150,
+                              height: 50,
+                              child: Image.asset(AssetsPath.websiteLogo, fit: BoxFit.contain),
+                            ),
+                            Builder(
+                              builder: (context) => IconButton(
+                                icon: const Icon(Icons.menu, color: Colors.white, size: 28),
+                                onPressed: () {
+                                  Scaffold.of(context).openDrawer();
+                                },
+                              ),
+                            ),
+                          ],
+                  ),
                 ),
-                const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    NavbarItem(title: 'Home'),
-                    SizedBox(width: 25),
-                    NavbarItem(title: 'Skills'),
-                    SizedBox(width: 25),
-                    NavbarItem(title: 'Projects'),
-                    SizedBox(width: 25),
-                    NavbarItem(title: 'Blog'),
-                    SizedBox(width: 25),
-                    NavbarItem(title: 'About Me'),
-                  ],
-                ),
-                const AnimatedButton(
-                  buttonLabel: 'Contact Me',
-                  hoverColor: Colors.teal,
-                ),
-              ],
-            )),
+              ),
+            ),
           ],
         ),
       ),
@@ -65,5 +115,9 @@ class CustomWebNavBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(98.0);
+  Size get preferredSize {
+    final view = WidgetsBinding.instance.platformDispatcher.views.first;
+    final width = view.physicalSize.width / view.devicePixelRatio;
+    return Size.fromHeight(width >= 1008 ? 98.0 : 70.0);
+  }
 }
